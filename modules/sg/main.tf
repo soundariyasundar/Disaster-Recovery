@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
 resource "aws_security_group" "sgroup" {
   name        = "${var.name}-${var.type}-sg"
   description = "${var.type} security group for ${var.name}"
