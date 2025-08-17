@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "tf_state" {
-  bucket = "s3backendstate1204"  # Must be globally unique!
+  bucket = "s3backendstate12041204"  # Must be globally unique!
   acl    = "private"
   versioning {
     enabled = true
