@@ -33,7 +33,7 @@ variable "eks_cluster_version" {}
 variable "eks_node_instance_type" {}
 variable "eks_node_count" {}
 variable "eks_api_cidrs" {}
- 
+
 variable "allowed_http_cidrs" {}
 
 variable "key_name" {
@@ -126,50 +126,50 @@ variable "ecr_backend_tags" {
 
 variable "ecr_frontend_replication_destinations" {
   description = "List of replication destinations for frontend ECR"
-  type        = list(object({
+  type = list(object({
     region      = string
     registry_id = string
   }))
-  default     = []
+  default = []
 }
 
 variable "ecr_backend_replication_destinations" {
   description = "List of replication destinations for backend ECR"
-  type        = list(object({
+  type = list(object({
     region      = string
     registry_id = string
   }))
-  default     = []
+  default = []
 }
 
 
 variable "root_volume_size" {}
 
 variable "eks_cluster_role_name" {
-  
+
 }
 variable "eks_cluster_trusted_services" {
-  
+
 }
 variable "eks_cluster_policy_arns" {
-  
+
 }
 variable "eks_node_group_role_name" {
-  
+
 }
 variable "eks_node_group_trusted_services" {
-  
+
 }
 variable "eks_node_group_policy_arns" {
-  
+
 }
 
 variable "rds_mysql_role_name" {
-  
+
 }
 variable "rds_mysql_aws_services" {
-  
+
 }
 variable "rds_mysql_policy_arns" {
-  
+
 }

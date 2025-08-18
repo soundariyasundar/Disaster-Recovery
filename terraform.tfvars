@@ -21,45 +21,45 @@ allowed_ssh_cidrs   = ["60.243.95.65/32"]
 allowed_nginx_cidrs = ["0.0.0.0/0"]
 allowed_db_cidrs    = ["10.10.0.0/16", "10.20.0.0/16"]
 
-name = "RDSdb"
-db_instance_class  = "db.t3.medium"
-db_username        = "admin"
-db_password        = "SuperSecret123!"
-db_engine_version  = "8.0"
+name              = "RDSdb"
+db_instance_class = "db.t3.medium"
+db_username       = "admin"
+db_password       = "SuperSecret123!"
+db_engine_version = "8.0"
 
 eks_cluster_version    = "1.32"
 eks_node_instance_type = "t3.medium"
 eks_node_count         = 2
-eks_api_cidrs = ["60.243.95.65/32"]  
+eks_api_cidrs          = ["60.243.95.65/32"]
 
-allowed_http_cidrs = ["0.0.0.0/0"]  
+allowed_http_cidrs = ["0.0.0.0/0"]
 
 
 key_name = "key-pair-crr"
 
-nginx_name                  = "primary"
-nginx_type                  = "nginx"
-nginx_instance_count        = 2
-nginx_ami_primary           = "ami-0de716d6197524dd9"  
-nginx_ami_dr                = "ami-0144277607031eca2"
-nginx_instance_type         = "t3.medium"
-nginx_associate_public_ip   = false
+nginx_name                = "primary"
+nginx_type                = "nginx"
+nginx_instance_count      = 2
+nginx_ami_primary         = "ami-0de716d6197524dd9"
+nginx_ami_dr              = "ami-0144277607031eca2"
+nginx_instance_type       = "t3.medium"
+nginx_associate_public_ip = false
 
 bastion_name                = "primary"
 bastion_type                = "bastion"
 bastion_instance_count      = 2
-bastion_ami_primary         = "ami-0de716d6197524dd9"  
+bastion_ami_primary         = "ami-0de716d6197524dd9"
 bastion_ami_dr              = "ami-0144277607031eca2"
 bastion_instance_type       = "t3.medium"
 bastion_associate_public_ip = true
 
 
-infra_name                  = "primary"
-infra_type                  = "infra"
-infra_instance_count        = 1
-infra_ami_primary           = "ami-0de716d6197524dd9"  
-infra_instance_type         = "t2.micro"
-infra_associate_public_ip   = false
+infra_name                = "primary"
+infra_type                = "infra"
+infra_instance_count      = 1
+infra_ami_primary         = "ami-0de716d6197524dd9"
+infra_instance_type       = "t2.micro"
+infra_associate_public_ip = false
 
 
 secret_name = "rds-secret"
@@ -70,7 +70,7 @@ ecr_frontend_name = "frontend"
 ecr_backend_name  = "backend"
 
 ecr_image_tag_mutability = "MUTABLE"
-ecr_scan_on_push        = true
+ecr_scan_on_push         = true
 
 ecr_frontend_tags = {
   "project"   = "project"
@@ -105,7 +105,7 @@ eks_cluster_trusted_services = ["eks.amazonaws.com"]
 eks_cluster_policy_arns = [
   "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
 ]
- 
+
 eks_node_group_role_name        = "eks-node-group-role"
 eks_node_group_trusted_services = ["ec2.amazonaws.com"]
 eks_node_group_policy_arns = [
@@ -114,8 +114,8 @@ eks_node_group_policy_arns = [
   "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
   "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
 ]
- 
-rds_mysql_role_name        = "RDS-monitoring-role"
+
+rds_mysql_role_name    = "RDS-monitoring-role"
 rds_mysql_aws_services = ["monitoring.rds.amazonaws.com"]
 rds_mysql_policy_arns = [
   "arn:aws:iam::aws:policy/service-role/AmazonRDSEnhancedMonitoringRole"
