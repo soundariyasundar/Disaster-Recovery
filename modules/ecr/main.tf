@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+
 resource "aws_ecr_repository" "repo" {
   name                 = var.name
   image_tag_mutability = var.image_tag_mutability
